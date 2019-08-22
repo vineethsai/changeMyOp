@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        Man must explore, and this is exploration at its greatest
+                    </h2>
+                    <h3 class="post-subtitle">
+                        Problems look mighty small from 150 miles up
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on September 24, 2019</p>
+            </div>
+            <hr>
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                    </h2>
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on September 18, 2019</p>
+            </div>
+            <hr>
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        Science has not yet mastered prophecy
+                    </h2>
+                    <h3 class="post-subtitle">
+                        We predict too much for the next year and yet far too little for the next ten.
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on August 24, 2019</p>
+            </div>
+            <hr>
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        Failure is not an option
+                    </h2>
+                    <h3 class="post-subtitle">
+                        Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on July 8, 2019</p>
+            </div>
+            <hr>
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+
+
+<!-- Bootstrap core JavaScript -->
+
+
+<!-- Custom scripts for this template -->
+<script>
+    (function ($) {
+        "use strict"; // Start of use strict
+
+        // Floating label headings for the contact form
+        $("body").on("input propertychange", ".floating-label-form-group", function (e) {
+            $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
+        }).on("focus", ".floating-label-form-group", function () {
+            $(this).addClass("floating-label-form-group-with-focus");
+        }).on("blur", ".floating-label-form-group", function () {
+            $(this).removeClass("floating-label-form-group-with-focus");
+        });
+
+        // Show the navbar when the page is scrolled up
+        var MQL = 992;
+
+        //primary navigation slide-in effect
+        if ($(window).width() > MQL) {
+            var headerHeight = $('#mainNav').height();
+            $(window).on('scroll', {
+                    previousTop: 0
+                },
+                function () {
+                    var currentTop = $(window).scrollTop();
+                    //check if user is scrolling up
+                    if (currentTop < this.previousTop) {
+                        //if scrolling up...
+                        if (currentTop > 0 && $('#mainNav').hasClass('is-fixed')) {
+                            $('#mainNav').addClass('is-visible');
+                        } else {
+                            $('#mainNav').removeClass('is-visible is-fixed');
+                        }
+                    } else if (currentTop > this.previousTop) {
+                        //if scrolling down...
+                        $('#mainNav').removeClass('is-visible');
+                        if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
+                    }
+                    this.previousTop = currentTop;
+                });
+        }
+
+    })(jQuery); // End of use strict
+</script>
+{% endblock %}
